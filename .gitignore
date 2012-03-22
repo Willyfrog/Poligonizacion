@@ -1,0 +1,7 @@
+#Ficheros a ignorar por git
+#ficheros de python compilados
+*.pyc
+#ficheros de swap de vim
+*.swp
+#no subir el entorno de virtualenv
+env
