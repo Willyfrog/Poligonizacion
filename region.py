@@ -2,19 +2,19 @@
 
 class Region(object):
     '''Nodo de arbol de regiones'''
-    def __init__(self, puntos, centro):
+    def __init__(self, puntos, largo, ancho, x, y):
         '''crea una region'''
         self.pts = puntos
-        self.centro = centro
+        self.largo = largo
+        self.ancho = ancho
+        self.x = x
+        self.y = y
         self.hijos = None
-        self.sel = None
         if len(puntos) > 1:
             self.dividir()
-        else:
-            self.seleccionar()
 
     def __repr__(self):
-        return '<Centro %r, Puntos %r>' % (self.sel, self.pts)
+        return '<Origen %r, Puntos %r>' % ((self.x, self.y), self.pts)
 
     def mostrar(self):
         print "%r" % self
@@ -25,9 +25,3 @@ class Region(object):
     def dividir(self):
         raise NotImplementedError  # las subclases deberan implementarlas
 
-    def seleccionar(self):
-        '''elige el punto o pone el centro si fuera vacio'''
-        if self.pts and self.pts[0]:
-            self.sel = self.pts[0]
-        else:
-            self.sel = self.centro
