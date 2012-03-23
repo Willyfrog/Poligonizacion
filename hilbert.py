@@ -6,7 +6,7 @@ import region
 DIVISION = 4
 
 
-class Region(region.Region):
+class RegionHilbert(region.Region):
     '''implementacion de la region'''
     def dividir(self):
         pass

@@ -5,8 +5,7 @@ import aleatorio  # estrategia de prueba
 # hilbert (o peano, mas adelante)
 
 
-def poligonizar(puntos, alg=hilbert):
+def poligonizar(puntos, reg=hilbert.RegionHilbert):
     '''dada una lista de puntos, poligonizarla segun una curva de alg (por
     defecto hilbert)'''
-    alg.Region(puntos)  # generamos el arbol de regiones segun el algoritmo
-
+    r = reg(puntos, (0, 0))  # generamos el arbol de regiones
